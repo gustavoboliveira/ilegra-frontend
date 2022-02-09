@@ -1,19 +1,28 @@
+const display = document.getElementById('display')
 let resultGenerated = false;
 let points = true;
-let history = [];
+const history = [];
+
+function checkCondicion(element) {
+    if (element == '+' || element == '-' || element == 'x' || element == '/') {
+        return true;
+    } else {
+        return false
+    }
+}
 
 function clearMemory() {
     points = true;
-    document.getElementById('display').innerHTML = 0;
-    document.getElementById('display').style.fontSize = "1.5em";
+    display.innerHTML = 0;
+    display.style.fontSize = "1.5em";
 }
 
 function showHistory() {
     if (history.length === 0) {
-        document.getElementById('display').innerHTML;
+        display.innerHTML;
     } else {
-        document.getElementById('display').style.fontSize = "1em";
-        document.getElementById('display').innerHTML = history.reverse();
+        display.style.fontSize = "1em";
+        display.innerHTML = history.reverse();
         history.reverse()
     }
 }
@@ -28,8 +37,8 @@ function addHistory(expression) {
 }
 
 function insertOption(element) {
-    let atual = document.getElementById('display').innerHTML;
-    document.getElementById('display').style.fontSize = "1.5em";
+    let atual = display.innerHTML;
+    display.style.fontSize = "1.5em";
 
     if (element == '.') {
         if (points === true) {
@@ -39,7 +48,7 @@ function insertOption(element) {
         }
     }
 
-    if (element == '+' || element == '-' || element == 'x' || element == '/') {
+    if (checkCondicion(element)) {
         points = true;
     }
 
@@ -47,28 +56,28 @@ function insertOption(element) {
         return;
     }
 
-    if ((atual[atual.length - 1] == '+' || atual[atual.length - 1] == '-' || atual[atual.length - 1] == 'x' || atual[atual.length - 1] == '/') && (element == '+' || element == '-' || element == 'x' || element == '/')) {
+    if ((checkCondicion(atual[atual.length - 1])) && (checkCondicion(element))) {
         atual = atual.slice(0, -1);
     }
 
-    if (parseInt(atual) === 0 || (atual == '+' || atual == '-' || atual == 'x' || atual == '/')) {
-        document.getElementById('display').innerHTML = element;
+    if (parseInt(atual) === 0 || (checkCondicion(atual))) {
+        display.innerHTML = element;
     } else {
         if (resultGenerated === true) {
             resultGenerated = false;
-            document.getElementById('display').innerHTML = element;
+            display.innerHTML = element;
         } else {
-            document.getElementById('display').innerHTML = atual + element;
+            display.innerHTML = atual + element;
         }
     }
 }
 
 function calculate() {
-    var expression = document.getElementById('display').innerHTML;
+    let expression = display.innerHTML;
 
     if (expression) {
 
-        if (expression[expression.length - 1] == '+' || expression[expression.length - 1] == '-' || expression[expression.length - 1] == 'x' || expression[expression.length - 1] == '/') {
+        if (checkCondicion(expression[expression.length - 1])) {
             expression = expression.slice(0, -1);
         }
 
@@ -82,14 +91,14 @@ function calculate() {
 
         if (result === Infinity) {
             const msg = 'Não é possível dividir por zero'
-            document.getElementById('display').style.fontSize = "1em";
-            document.getElementById('display').innerHTML = msg;
+            display.style.fontSize = "1em";
+            display.innerHTML = msg;
         } else {
 
             if (expression.includes('+') || expression.includes('-') || expression.includes('*') || expression.includes('/')) {
                 const historyExpression = expression + '=' + result
                 addHistory(historyExpression)
-                document.getElementById('display').innerHTML = result;
+                display.innerHTML = result;
             }
         }
     }
