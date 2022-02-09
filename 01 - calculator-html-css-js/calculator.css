@@ -17,6 +17,13 @@ body {
     background: linear-gradient(to right, rgb(83, 105, 118), rgb(41, 46, 73));
 }
 
+button {
+    color: #0A0A0A;
+    border: 1px solid #8e8e8e;
+    font-size: 1.2rem;
+    background-color: #e0e0e0;
+}
+
 #display {
     grid-column: span 4;
     background-color: #0004;
@@ -38,45 +45,38 @@ body {
     grid-template-rows: 1fr repeat(5, 48px);
 }
 
-.button {
-    color: #0A0A0A;
-    border: 1px solid #8e8e8e;
-    font-size: 1.2rem;
-    background-color: #e0e0e0;
-}
-
-.button.cleaner {
+.cleaner {
     grid-column: span 2;
     color: #fff;
     background-color: #3ca569;
 }
 
-.button.history {
+.history {
     color: #fff;
     background-color: #395fda;
 }
 
-.button.zero {
+.zero {
     grid-column: span 2;
 }
 
-.button.operations {
+.operations {
     color: #fff;
     background-color: #ec9649;
 }
 
-.button:active {
+button:active {
     background-color: #ccc;
 }
 
-.button.cleaner:active {
+.cleaner:active {
     background-color: #3ca56ac9;
 }
 
-.button.operations:active {
+.operations:active {
     background-color: #ec9549c9;
 }
 
-.button.history:active {
+.history:active {
     background-color: #395edac9;
 }
