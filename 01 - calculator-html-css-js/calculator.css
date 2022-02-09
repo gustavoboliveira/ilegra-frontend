@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'Roboto Mono';
+    src: url('/fonts/RobotoMono-Thin.ttf');
+}
+
+* {
+    font-family: 'Roboto Mono', 'monospace';
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(to right, rgb(83, 105, 118), rgb(41, 46, 73));
+}
+
+#display {
+    grid-column: span 4;
+    background-color: #0004;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    font-size: 1.5em;
+    overflow: hidden;
+}
+
+.calculator {
+    height: 350px;
+    width: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: 1fr repeat(5, 48px);
+}
+
+.button {
+    color: #0A0A0A;
+    border: 1px solid #8e8e8e;
+    font-size: 1.2rem;
+    background-color: #e0e0e0;
+}
+
+.button.cleaner {
+    grid-column: span 2;
+    color: #fff;
+    background-color: #3ca569;
+}
+
+.button.history {
+    color: #fff;
+    background-color: #395fda;
+}
+
+.button.zero {
+    grid-column: span 2;
+}
+
+.button.operations {
+    color: #fff;
+    background-color: #ec9649;
+}
+
+.button:active {
+    background-color: #ccc;
+}
+
+.button.cleaner:active {
+    background-color: #3ca56ac9;
+}
+
+.button.operations:active {
+    background-color: #ec9549c9;
+}
+
+.button.history:active {
+    background-color: #395edac9;
+}
