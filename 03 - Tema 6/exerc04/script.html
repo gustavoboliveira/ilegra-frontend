@@ -1,0 +1,70 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questão 04 - lista 2</title>
+</head>
+
+<body>
+    <script>
+        /* 4) Crie uma função buscar que recebe três parâmetros:
+                                                                                                                                                                                                                                                         
+                 - propriedade: Nome da propriedade no objeto
+                 - valor: Valor da propriedade no objeto
+                 - lista: Lista de objetos onde a busca deve ser executada
+                 
+                Dado estes parâmetros, a função deve buscar na lista e retornar o registro que possui a propriedade com o valor especificado.
+                 
+                Utilize o método `find`.
+                 
+                
+                var lista = [
+                    { nome: 'Tânia', sobrenome: 'Cardoso', idade: 65 },
+                    { nome: 'Emilly', sobrenome: 'Barbosa', idade: 46 },
+                    { nome: 'Vitória', sobrenome: 'Costa', idade: 83 },
+                    { nome: 'Erick', sobrenome: 'Ferreira', idade: 16 }
+                ]
+                 
+                buscar('nome', 'Tânia', lista) 
+                 
+                // saída
+                // { nome: 'Tânia', sobrenome: 'Cardoso', idade: 65 }*/
+
+        let lista = [{
+            nome: 'Tânia',
+            sobrenome: 'Cardoso',
+            idade: 65
+        }, {
+            nome: 'Emilly',
+            sobrenome: 'Barbosa',
+            idade: 46
+        }, {
+            nome: 'Vitória',
+            sobrenome: 'Costa',
+            idade: 83
+        }, {
+            nome: 'Erick',
+            sobrenome: 'Ferreira',
+            idade: 16
+        }]
+
+        function buscar(propriedade, valor, lista) {
+            return lista.find((e) => {
+                if (propriedade === 'nome')
+                    return e.nome === valor;
+
+                else if (propriedade === 'sobrenome')
+                    return e.sobrenome === valor;
+
+                else if (propriedade === 'idade')
+                    return e.idade === valor;
+            });
+        }
+
+        console.log(buscar('nome', 'Tânia', lista))
+    </script>
+</body>
+
+</html>

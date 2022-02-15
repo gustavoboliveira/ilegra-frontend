@@ -1,0 +1,37 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questão 07 - lista 2</title>
+</head>
+
+<body>
+    <script>
+        /*7) Utilizando a template string, crie uma string utilizando todos dados do objeto
+                                 
+                var objeto = {
+                    nome: 'John Doe',
+                    idade: 35,
+                    país: 'Estados Unidos',
+                    estado: 'Massachusetts'
+                }
+                 
+                // saída
+                // Olá, meu nome é John Doe e eu tenho 35 anos de idade, moro nos Estados Unidos no estado de Massachusetts*/
+
+        const objeto = {
+            nome: 'John Doe',
+            idade: 35,
+            país: 'Estados Unidos',
+            estado: 'Massachusetts'
+        }
+
+        const string = `Olá, meu nome é ${objeto.nome} e eu tenho ${objeto.idade} anos de idade, moro nos ${objeto.país} no estado de ${objeto.estado}`
+
+        console.log(string)
+    </script>
+</body>
+
+</html>

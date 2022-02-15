@@ -1,0 +1,49 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questão 01 - lista 1</title>
+</head>
+
+<body>
+    <script>
+        /*1) Crie uma classe Produto com os seguintes atributos:
+                
+                qtdEstoque
+                nome
+                tamanho
+                cor
+                preco
+                
+                e com os seguintes métodos: 
+                
+                vender - diminui a quantidade em estoque em -1
+                info - Método estático que retorna informações sobre o objeto
+                */
+
+
+        class Product {
+
+            constructor(qtdEstoque, nome, tamanho, cor, preco) {
+                this.qtdEstoque = qtdEstoque;
+                this.nome = nome;
+                this.tamanho = tamanho;
+                this.cor = cor;
+                this.preco = preco;
+            }
+
+
+            vender() {
+                this.qtdEstoque--;
+            }
+
+            static information(obj) {
+                return `Quantidade em estoque: ${obj.qtdEstoque}\nNome: ${obj.nome}\nTamanho: ${obj.tamanho}\nCor: ${obj.cor}\nPreço: ${obj.preco}`;
+            }
+        }
+    </script>
+</body>
+
+</html>

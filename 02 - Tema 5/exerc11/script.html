@@ -1,0 +1,33 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questão 11 - lista 1</title>
+</head>
+
+<body>
+    <script>
+        /*11) Cria uma função utilizando setTimeout que retorne uma promise com resolve e reject e chame esse método com then e catch.*/
+
+        function verificaSeAprovou(...notas) {
+            const media = (notas.reduce((x, y) => x + y)) / notas.length
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (media >= 6) {
+                        resolve('Aprovado! Parabéns!')
+                    }
+
+                    reject(new Error('Reprovado! Precisa estudar mais...'))
+                }, 100)
+            });
+        }
+
+        verificaSeAprovou(7.3, 3.4, 5.2)
+            .then(sucesso => console.log(sucesso))
+            .catch(error => console.error(error))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questão 09 - lista 2</title>
+</head>
+
+<body>
+    <script>
+        /*9) Implemente o método `calculaValorTotalDaCompra` que recebe quatro parâmetros:
+                 - produtos: Lista com o nome dos produtos comprados
+                 - cidade: String que representa o nome da cidade
+                 - caixa: Mapa que contém relação de produtos e preços
+                 - fretes: Mapa que contém relação de cidades e fretes
+                 
+                Calcule o preço total da compra junto com o frete de acordo com as tabelas a seguir:
+                 
+                Produtos:
+                                                                                                                                     
+                Produto | Preço
+                --------|------
+                | Arroz | 7.10
+                | Feijão | 2.30
+                | Macarrão | 4.70
+                | Refrigerante | 3.00
+                 
+                Fretes:
+                 
+                | Cidade | Frete
+                ---------|-------
+                | São Paulo | 10.10
+                | Rio de Janeiro | 12.30
+                | Brasília | 14.70
+                | Outros | 13.00
+                 
+                calculaValorTotalDaCompra(['Arroz'], 'São Paulo', caixa, fretes)
+                 
+                // saída
+                // 17,20*/
+
+        const caixa = [{
+            produto: 'Arroz',
+            preco: 7.10
+        }, {
+            produto: 'Feijão',
+            preco: 2.30
+        }, {
+            produto: 'Macarrão',
+            preco: 4.70
+        }, {
+            produto: 'Refrigerante',
+            preco: 3.00
+        }]
+
+        const fretes = [{
+            cidade: 'São Paulo',
+            preco: 10.10
+        }, {
+            cidade: 'Rio de Janeiro',
+            preco: 12.30
+        }, {
+            cidade: 'Brasília',
+            preco: 14.70
+        }, {
+            cidade: 'Outros',
+            preco: 13.00
+        }]
+
+        function calculaValorTotalDaCompra(produtos, cidade, caixa, frete) {
+            let totalCompras = []
+
+            for (const p of produtos) {
+                for (const c of caixa) {
+                    if (p === c.produto) {
+                        totalCompras.push(c.preco);
+                        break;
+                    }
+                }
+            }
+
+            totalCompras = totalCompras.reduce((x, y) => x + y);
+
+            const totalFrete = frete.find((e) => e.cidade === cidade).preco;
+            return (totalCompras + totalFrete).toFixed(2);
+        }
+
+        console.log(calculaValorTotalDaCompra(['Arroz'], 'São Paulo', caixa, fretes))
+    </script>
+</body>
+
+</html>

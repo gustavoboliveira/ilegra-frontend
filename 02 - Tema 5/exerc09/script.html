@@ -1,0 +1,77 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questão 09 - lista 1</title>
+</head>
+
+<body>
+    <script>
+        /*9) Dada a lista de pessoas em uma escola, crie um algoritmo que    retorne apenas o nome e o sobrenome concatenado de todos os alunos da escola. Utilize template string para concatenar o nome e o sobrenome.
+                ex: ['joão das graças', 'gustavo brando', 'pedro farias', 'josué das flores', 'amalrindo nascimento']
+                    const arrayPessoas =  [
+                        { nome: 'joão', sobrenome: 'das graças', idade: 23, funcao: 'aluno'},
+                        { nome: 'maria', sobrenome: 'nascimento', idade: 30, funcao: 'professor' },
+                        { nome: 'fernando', sobrenome: 'filho' , idade: 31, funcao: 'professor' },
+                        { nome: 'gustavo', sobrenome: 'brando', idade: 22, funcao: 'aluno'},
+                        { nome: 'pedro', sobrenome: 'farias', idade: 20, funcao: 'aluno' },
+                        { nome: 'josué', sobrenome: 'das flores' , idade: 21, funcao: 'aluno'},
+                        { nome: 'amalrindo', sobrenome: 'nascimento', idade: 23, funcao: 'aluno'},
+                        { nome: 'debora', sobrenome: 'castro', idade: 28, funcao: 'professor'}
+                    ]*/
+
+        const arrayPessoas = [{
+            nome: 'joão',
+            sobrenome: 'das graças',
+            idade: 23,
+            funcao: 'aluno'
+        }, {
+            nome: 'maria',
+            sobrenome: 'nascimento',
+            idade: 30,
+            funcao: 'professor'
+        }, {
+            nome: 'fernando',
+            sobrenome: 'filho',
+            idade: 31,
+            funcao: 'professor'
+        }, {
+            nome: 'gustavo',
+            sobrenome: 'brando',
+            idade: 22,
+            funcao: 'aluno'
+        }, {
+            nome: 'pedro',
+            sobrenome: 'farias',
+            idade: 20,
+            funcao: 'aluno'
+        }, {
+            nome: 'josué',
+            sobrenome: 'das flores',
+            idade: 21,
+            funcao: 'aluno'
+        }, {
+            nome: 'amalrindo',
+            sobrenome: 'nascimento',
+            idade: 23,
+            funcao: 'aluno'
+        }, {
+            nome: 'debora',
+            sobrenome: 'castro',
+            idade: 28,
+            funcao: 'professor'
+        }]
+
+        const arrayNome = [];
+
+        for (const pessoa of arrayPessoas) {
+            arrayNome.push(`${pessoa.nome} ${pessoa.sobrenome}`)
+        }
+
+        console.log(arrayNome)
+    </script>
+</body>
+
+</html>

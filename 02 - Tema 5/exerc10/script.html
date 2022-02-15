@@ -1,0 +1,22 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questão 10 - lista 1</title>
+</head>
+
+<body>
+    <script>
+        /*10) Crie uma função chamada bigMulti() que receba um array de números e retorne a multiplicação dos valores desse array, utilizando reduce.*/
+
+        function bigMulti(...arrayNumbers) {
+            return arrayNumbers.reduce((x, y) => x * y)
+        }
+
+        console.log(bigMulti(6, 7, 8, 9, 5, 4))
+    </script>
+</body>
+
+</html>

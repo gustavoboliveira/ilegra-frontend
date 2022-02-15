@@ -1,0 +1,42 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questão 06 - lista 1</title>
+</head>
+
+<body>
+    <script>
+        /*6) Concatene os arrays abaixo em um único array utilizando ES6
+
+                const numbers = [1, 2, 3]
+                const letters = ['a', 'b', 'c']
+                const frutas = ['bananas', 'maçãs', 'melão']
+                const mixDeArrays = ?*/
+
+        const numbers = [1, 2, 3]
+        const letters = ['a', 'b', 'c']
+        const frutas = ['bananas', 'maçãs', 'melão']
+
+        const mixDeArrays = [];
+
+        function concat() {
+            for (const number of numbers)
+                mixDeArrays.push(number)
+
+            for (const letter of letters)
+                mixDeArrays.push(letter)
+
+            for (const fruta of frutas)
+                mixDeArrays.push(fruta)
+        };
+
+        concat();
+
+        console.log(mixDeArrays)
+    </script>
+</body>
+
+</html>

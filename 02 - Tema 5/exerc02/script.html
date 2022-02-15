@@ -1,0 +1,73 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questão 02 - lista 1</title>
+</head>
+
+<body>
+    <script>
+        /*2) Converta o código abaixo para ES6
+                            concatenação de string - templatestring
+                            const e let
+                            shorthand param
+                            default param
+                            arrow function
+                            classes
+                            function dentro de variável
+                            etc...*/
+
+        function buscaArquivoNoSistema(nomeArquivo) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log(`buscou o arquivo ${nomeArquivo}`);
+
+                    resolve(nomeArquivo);
+                }, 300)
+            })
+        }
+
+        function salvaArquivoNoServidor(urlServico = 'www.api.com', arquivo) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (!arquivo)
+                        return reject('arquivo não existe');
+                    console.log(`salvou no servidor ${urlServico}`);
+
+                    resolve(urlServico)
+                }, 300)
+            })
+        }
+
+        const somaMultiplosNumeros = (numerosArray = [0]) => numerosArray.reduce((acumulador, numeroAtual) => acumulador + numeroAtual);
+
+        // chama os serviços de buscar arquivo e salva no servidor 
+        function handlerArquivo() {
+            buscaArquivoNoSistema('teste1', (err, arquivo) => {
+                if (!err)
+                    salvaArquivoNoServidor('www.google.com', arquivo, (err, sucesso) => {
+                        if (!err) {
+                            console.log(sucesso);
+                        }
+                    })
+            })
+        }
+        const name = "Marcelo";
+        const father = {
+            name,
+            friendsFather: ['João', 'Maria'],
+            olaAmigos: () => father.friendsFather.map((value) => console.log(`${father.name} conhece ${value}`))
+        }
+
+        class Pessoa {
+            constructor(nome, idade) {
+                this.nome = nome;
+                this.idade = idade;
+            }
+        }
+    </script>
+</body>
+
+</html>
