@@ -10,7 +10,7 @@
 <body>
     <script>
         /* 4) Crie uma função buscar que recebe três parâmetros:
-                                                                                                                                                                                                                                                         
+                                                                                                                                                                                                                                                                                 
                  - propriedade: Nome da propriedade no objeto
                  - valor: Valor da propriedade no objeto
                  - lista: Lista de objetos onde a busca deve ser executada
@@ -32,7 +32,7 @@
                 // saída
                 // { nome: 'Tânia', sobrenome: 'Cardoso', idade: 65 }*/
 
-        let lista = [{
+        const lista = [{
             nome: 'Tânia',
             sobrenome: 'Cardoso',
             idade: 65
@@ -51,15 +51,8 @@
         }]
 
         function buscar(propriedade, valor, lista) {
-            return lista.find((e) => {
-                if (propriedade === 'nome')
-                    return e.nome === valor;
-
-                else if (propriedade === 'sobrenome')
-                    return e.sobrenome === valor;
-
-                else if (propriedade === 'idade')
-                    return e.idade === valor;
+            return lista.find((item) => {
+                return item[`${propriedade}`] === valor
             });
         }
 

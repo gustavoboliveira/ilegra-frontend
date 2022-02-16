@@ -24,7 +24,11 @@
             });
         }
 
-        verificaSeAprovou(7.3, 3.4, 5.2)
+        verificaSeAprovou(7.3, 6.4, 5.2)
+            .then(sucesso => console.log(sucesso))
+            .catch(error => console.error(error))
+
+        verificaSeAprovou(3.3, 3.4, 5.2)
             .then(sucesso => console.log(sucesso))
             .catch(error => console.error(error))
     </script>

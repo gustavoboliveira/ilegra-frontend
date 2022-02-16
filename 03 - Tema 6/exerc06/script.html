@@ -10,7 +10,7 @@
 <body>
     <script>
         /*6)Crie uma função chamada `aoMenosUm` que itere por todo o array e diga se pelo menus um dos alunos é da escola `Alguma Escola 2`
-                
+                                                        
                 var lista = [
                     { nome: 'Tânia', escola: 'Alguma Escola' },
                     { nome: 'Emilly', escola: 'Alguma Escola' },
@@ -23,7 +23,7 @@
                 // saída
                 // true*/
 
-        let lista = [{
+        const lista = [{
             nome: 'Tânia',
             escola: 'Alguma Escola'
         }, {
@@ -38,8 +38,7 @@
         }]
 
         function aoMenosUm(lista) {
-            let qtd = lista.filter((e) => e.escola === 'Alguma Escola 2');
-            return (qtd.length > 0) ? true : false;
+            return lista.some((item) => item.escola === 'Alguma Escola 2');
         }
 
         console.log(aoMenosUm(lista))

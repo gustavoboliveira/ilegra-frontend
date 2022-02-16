@@ -17,11 +17,11 @@
         let fruta1 = 'banana';
         let fruta2 = 'maçã';
 
-        inverte = () => {
-            const aux = fruta1;
-            fruta1 = fruta2;
-            fruta2 = aux;
-        }
+        inverte = () => [fruta1, fruta2] = [fruta2, fruta1]
+        inverte()
+
+        console.log(fruta1)
+        console.log(fruta2)
     </script>
 </body>
 
