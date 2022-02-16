@@ -1,0 +1,22 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questão 07 - lista 1</title>
+</head>
+
+<body>
+    <script>
+        /*7) Crie uma função qualquer que receba 3 parâmetros, os dois primeiros utilizando default parameter e o terceiro utilizando rest param*/
+
+        function calcule(x1 = 0, x2 = 0, ...x3) {
+            return x1 + x2 + (x3.reduce((x, y) => x + y));
+        }
+
+        console.log(calcule(2, 4, 5, 6, 6))
+    </script>
+</body>
+
+</html>

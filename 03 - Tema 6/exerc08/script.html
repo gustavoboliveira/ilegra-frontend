@@ -1,0 +1,30 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questão 08 - lista 2</title>
+</head>
+
+<body>
+    <script>
+        /*8) Implemente o método `removeDuplicatas` quer recebe o seguinte parâmetro:
+                 - numeros: lista de números inteiros positivos
+                 
+                O método deve retornar a lista de número sem repetições. Utilize a estrutura de dados Set para resolver este problema.
+                 
+                removeDuplicatas([1,1,2,2,3,3])
+                 
+                // saída
+                // [1,2,3]*/
+
+        function removeDuplicatas(lista = []) {
+            return new Set(lista)
+        }
+
+        console.log(removeDuplicatas([1, 1, 2, 2, 3, 3]))
+    </script>
+</body>
+
+</html>

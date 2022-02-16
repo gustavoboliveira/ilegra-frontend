@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questão 05 - lista 2</title>
+</head>
+
+<body>
+    <script>
+        /*5) Crie uma função chamada `saoTodosDaMesmaEscola` que itere por todo o array e diga se todos os alunos são da mesma escola
+                                                                                                                                                
+                var lista = [
+                    { nome: 'Tânia', escola: 'Alguma Escola' },
+                    { nome: 'Emilly', escola: 'Alguma Escola' },
+                    { nome: 'Vitória', escola: 'Alguma Escola' },
+                    { nome: 'Erick', escola: 'Alguma Escola' }
+                ]
+                 
+                saoTodosDaMesmaEscola(lista)
+                 
+                // saída
+                // true*/
+
+        const lista = [{
+            nome: 'Tânia',
+            escola: 'Alguma Escola'
+        }, {
+            nome: 'Emilly',
+            escola: 'Alguma Escola'
+        }, {
+            nome: 'Vitória',
+            escola: 'Alguma Escola'
+        }, {
+            nome: 'Erick',
+            escola: 'Alguma Escola'
+        }]
+
+        function saoTodosDaMesmaEscola(lista = []) {
+            return lista.every((e) => e.escola === lista[0].escola);
+        }
+
+        console.log(saoTodosDaMesmaEscola(lista))
+    </script>
+</body>
+
+</html>

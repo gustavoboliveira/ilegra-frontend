@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questão 03 - lista 1</title>
+</head>
+
+<body>
+    <script>
+        /* 3) A função abaixo não está retornando nada, ache o erro e corrija:
+
+                function doHomeWork(materia) {
+                    return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        if (materia === ‘matematica’) {
+                            return 'Tarefa completa com sucesso'
+                        } 
+                return new Error( 'Eu só sei matemática :(' )
+                }, 3000)
+                })
+                }
+                doHomeWork('matematica')
+                    .then(sucesso => console.log(sucesso))
+                    .catch(error => console.error(error))*/
+
+        function doHomeWork(materia) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (materia === 'matematica') {
+                        resolve('Tarefa completa com sucesso')
+                    }
+
+                    reject(new Error('Eu só sei matemática :('))
+                }, 3000)
+            });
+        }
+
+        doHomeWork('matematica')
+            .then(sucesso => console.log(sucesso))
+            .catch(error => console.error(error))
+    </script>
+</body>
+
+</html>

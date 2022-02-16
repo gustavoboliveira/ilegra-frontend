@@ -1,0 +1,38 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questão 01 - lista 2</title>
+</head>
+
+<body>
+    <script>
+        /*1)Altere o código a seguir para utilizar o método `forEach` de modo que a saída permaneça a mesma.
+                                                                                                 
+                var numeros = [0,1,2,3,4,5];
+                for(var i = 0; i<= numeros.length; i++) {
+                    if(i % 2 === 0) {
+                        console.log(i + ' é par');
+                    } else {
+                        console.log(i + ' é ímpar');
+                    }
+                }
+                 
+                // saída:
+                // 0 é par
+                // 1 é ímpar
+                // 2 é par
+                // 3 é ímpar
+                // 4 é par
+                // 5 é ímpar
+                */
+
+        let numeros = [0, 1, 2, 3, 4, 5];
+
+        numeros.forEach((n) => ((n % 2) === 0) ? console.log(`${n} é par`) : console.log(`${n} é ímpar`));
+    </script>
+</body>
+
+</html>

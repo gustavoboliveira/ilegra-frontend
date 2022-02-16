@@ -1,0 +1,31 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questão 05 - lista 1</title>
+</head>
+
+<body>
+    <script>
+        /*5) Dado o objeto abaixo, faça com que em uma linha seja possível o uso das variáveis desse objeto serem usadas de forma separada:
+                ex: console.log(name)
+                    console.log(album)
+                const cantor = { name: 'Michael Jackson', album: 'Thriller' };*/
+
+        const cantor = {
+            name: 'Michael Jackson',
+            album: 'Thriller'
+        };
+        const {
+            name,
+            album
+        } = cantor;
+
+        console.log(name);
+        console.log(album);
+    </script>
+</body>
+
+</html>
