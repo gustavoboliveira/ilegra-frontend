@@ -1,13 +1,15 @@
+module.exports = { getTotalTracksInAlbuns, getQuantityArtistFollowers, getTotalPlaylistResearched, getTotalTrackInPlaylist, getTrackAndArtistsByResearch, getDurationTotalTracksResearched, getQuantityTracksResearched }
+
 global.fetch = require('node-fetch');
 
 const SpotifyWrapper = require('spotify-wrapper').default;
 
 const spotify = new SpotifyWrapper({
   token:
-    "BQCzI1E5h5pbhnPJZ1Dls19gJRg72EbcKOqwIqVrQbnhspXJdpy050nwqxSHDedLRIH4G1iGXmZ2e_StaSzWXvH2208Tyesq57ilDVoFrAo-oSZqb00ePRzwWgZGvXUUIlTmL6Gpj4jvdUvb9Nhhh0PIEFrvtL3436Y",
+    "BQCwLCc3lsEn0vtCyO5Dqg9Is6hZ9QxQvhuwwAa6XkIxc8lZh4bxG10O4DVtzxEHb0RjHrq314bqr2rtB7TIgmiO47Zi2UHVFMW1-CZE7TSDWljppwDmWMzezDf8Vjiz05EAC66cv7AbwutpsrXTKRy01Iu3EQfxNMs",
 });
 
-module.exports.getTotalTracksInAlbuns = (artist) => {
+function getTotalTracksInAlbuns(artist) {
   const arrTracks = [];
 
   return new Promise((resolve, reject) => {
@@ -16,8 +18,8 @@ module.exports.getTotalTracksInAlbuns = (artist) => {
       spotify.search.albums(artist).then((data) => {
         data.albums.items.map((item) => arrTracks.push(item.total_tracks));
 
-        totalTracksAlbums = arrTracks.reduce((x, y) => x + y)
-
+        const totalTracksAlbums = arrTracks.reduce((x, y) => x + y)
+        
         resolve(totalTracksAlbums);
       });
     } else
@@ -25,12 +27,12 @@ module.exports.getTotalTracksInAlbuns = (artist) => {
   })
 }
 
-module.exports.getQuantityArtistFollowers = (artist) => {
+function getQuantityArtistFollowers(artist) {
   return new Promise((resolve, reject) => {
 
     if (!(artist === null || artist === undefined)) {
       spotify.search.artists(artist).then((data) => {
-        followers = data.artists.items
+        const followers = data.artists.items
           .filter((item) => item.name === artist)
           .map((item) => item.followers.total)[0];
 
@@ -41,12 +43,12 @@ module.exports.getQuantityArtistFollowers = (artist) => {
   })
 }
 
-module.exports.getTotalPlaylistResearched = (playlist) => {
+function getTotalPlaylistResearched(playlist) {
   return new Promise((resolve, reject) => {
 
     if (!(playlist === null || playlist === undefined)) {
       spotify.search.playlists(playlist).then((data) => {
-        quantityPlaylists = data.playlists.total;
+        const quantityPlaylists = data.playlists.total;
 
         resolve(quantityPlaylists)
       });
@@ -55,12 +57,12 @@ module.exports.getTotalPlaylistResearched = (playlist) => {
   })
 }
 
-module.exports.getTotalTrackInPlaylist = (playlist) => {
+function getTotalTrackInPlaylist(playlist) {
   return new Promise((resolve, reject) => {
 
     if (!(playlist === null || playlist === undefined)) {
       spotify.search.playlists(playlist).then((data) => {
-        totalTrack = data.playlists.items
+        const totalTrack = data.playlists.items
           .filter((item) => item.name === playlist)
           .map((item) => item.tracks.total)[0];
 
@@ -75,31 +77,30 @@ module.exports.getTotalTrackInPlaylist = (playlist) => {
   })
 }
 
-module.exports.getTrackAndArtistsByResearch = (track) => {
-  let list = new Set();
+function getTrackAndArtistsByResearch(track) {
+  const listTracksAndArtist = new Set();
 
   return new Promise((resolve, reject) => {
 
     if (!(track === null || track === undefined)) {
       spotify.search.tracks(track).then((data) => {
         data.tracks.items.map((item) =>
-          list.add(
+          listTracksAndArtist.add(
             `Name: ${item.name} - Artist: ${item.artists[0].name}`
           )
         );
 
-        const arr = [];
+        const arrTracksAndArtist = [];
+        for (item of listTracksAndArtist) arrTracksAndArtist.push(item);
 
-        for (const item of list) arr.push(item);
-
-        resolve(arr)
+        resolve(arrTracksAndArtist)
       });
     } else
       reject(new Error('Tracks not found!'))
   })
 }
 
-module.exports.getDurationTotalTracksResearched = (track) => {
+function getDurationTotalTracksResearched(track) {
   const arrDuration = [];
 
   return new Promise((resolve, reject) => {
@@ -119,11 +120,11 @@ module.exports.getDurationTotalTracksResearched = (track) => {
   })
 }
 
-module.exports.getQuantityTracksResearched = (track) => {
+function getQuantityTracksResearched(track) {
   return new Promise((resolve, reject) => {
     if (!(track === null || track === undefined)) {
       spotify.search.tracks(track).then((data) => {
-        tracksQuantity = data.tracks.total;
+        const tracksQuantity = data.tracks.total;
 
         resolve(tracksQuantity)
       });

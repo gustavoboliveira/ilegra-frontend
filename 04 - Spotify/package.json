@@ -7,7 +7,7 @@
     "test": "test"
   },
   "dependencies": {
-    "node-fetch": "2",
+    "node-fetch": "^2.6.7",
     "spotify-wrapper": "^2.1.0"
   },
   "devDependencies": {
