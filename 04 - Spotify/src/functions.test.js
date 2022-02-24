@@ -1,4 +1,4 @@
-const lib = require("../src/functions");
+const lib = require("./functions");
 
 describe('should return total tracks on albums per artist', () => {
     test('artist Arctic Monkeys tracks greater than 0', () => {

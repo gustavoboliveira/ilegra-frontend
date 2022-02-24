@@ -1,4 +1,4 @@
-module.exports = { getTotalTracksInAlbuns, getQuantityArtistFollowers, getTotalPlaylistResearched, getTotalTrackInPlaylist, getTrackAndArtistsByResearch, getDurationTotalTracksResearched, getQuantityTracksResearched }
+require('dotenv').config()
 
 global.fetch = require('node-fetch');
 
@@ -6,7 +6,7 @@ const SpotifyWrapper = require('spotify-wrapper').default;
 
 const spotify = new SpotifyWrapper({
   token:
-    "BQCwLCc3lsEn0vtCyO5Dqg9Is6hZ9QxQvhuwwAa6XkIxc8lZh4bxG10O4DVtzxEHb0RjHrq314bqr2rtB7TIgmiO47Zi2UHVFMW1-CZE7TSDWljppwDmWMzezDf8Vjiz05EAC66cv7AbwutpsrXTKRy01Iu3EQfxNMs",
+    process.env.token,
 });
 
 function getTotalTracksInAlbuns(artist) {
@@ -19,7 +19,7 @@ function getTotalTracksInAlbuns(artist) {
         data.albums.items.map((item) => arrTracks.push(item.total_tracks));
 
         const totalTracksAlbums = arrTracks.reduce((x, y) => x + y)
-        
+
         resolve(totalTracksAlbums);
       });
     } else
@@ -132,3 +132,5 @@ function getQuantityTracksResearched(track) {
       reject(new Error('Tracks not found!'))
   })
 }
+
+module.exports = { getTotalTracksInAlbuns, getQuantityArtistFollowers, getTotalPlaylistResearched, getTotalTrackInPlaylist, getTrackAndArtistsByResearch, getDurationTotalTracksResearched, getQuantityTracksResearched }

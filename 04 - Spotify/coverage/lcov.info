@@ -40,7 +40,7 @@ FNDA:38,(anonymous_4)
 FNDA:3,getQuantityArtistFollowers
 FNDA:3,(anonymous_6)
 FNDA:2,(anonymous_7)
-FNDA:10,(anonymous_8)
+FNDA:7,(anonymous_8)
 FNDA:2,(anonymous_9)
 FNDA:4,getTotalPlaylistResearched
 FNDA:4,(anonymous_11)
@@ -78,7 +78,7 @@ DA:31,3
 DA:33,3
 DA:34,2
 DA:35,2
-DA:36,10
+DA:36,7
 DA:37,2
 DA:39,2
 DA:42,1
@@ -123,8 +123,9 @@ DA:126,2
 DA:127,2
 DA:129,2
 DA:132,1
-LF:61
-LH:61
+DA:136,1
+LF:62
+LH:62
 BRDA:17,0,0,2
 BRDA:17,0,1,1
 BRDA:17,1,0,3
