@@ -1,0 +1,16 @@
+.task{
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 0.85em;
+    font-weight: bold;
+    margin: 5px;
+    padding: 5px 30px;
+    background-color: rgba(93, 209, 89, 0.822);
+}
+
+.done{
+    background-color: rgb(219, 61, 61);
+    text-decoration: line-through;
+}
