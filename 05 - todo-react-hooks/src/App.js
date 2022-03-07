@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import Header from "./Components/Header"
-import List from "./Components/List"
-import Form from "./Components/Form"
+import { Header } from "./components/Header/index"
+import { List } from "./components/List/index"
+import { Form } from "./components/Form/index"
 
 import "./App.css"
 
@@ -42,9 +42,9 @@ function App() {
     }
 
     const newList = [...list, { id: count, description: newTask, done: false }]
-    const incCount = count+1;
+    const incCount = count + 1;
     setList(newList);
-    setCount(incCount)
+    setCount(incCount);
   }
 
   return (

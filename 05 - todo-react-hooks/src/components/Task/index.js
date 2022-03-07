@@ -1,7 +1,7 @@
 import React from "react";
-import './Task.css'
+import './index.css'
 
-const Task = ({ task, handleToggle }) => {
+export const Task = ({ task, handleToggle }) => {
 
     const handleClick = (event) => {
         event.preventDefault();
@@ -20,5 +20,3 @@ const Task = ({ task, handleToggle }) => {
         </div>
     );
 }
-
-export default Task;

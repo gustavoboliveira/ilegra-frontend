@@ -1,7 +1,7 @@
 import React, { useState } from "react"
-import "./Form.css"
+import "./index.css"
 
-const Form = ({ addTask }) => {
+export const Form = (props) => {
 
     const [description, setDescription] = useState('');
 
@@ -9,7 +9,7 @@ const Form = ({ addTask }) => {
         event.preventDefault();
         const desc = description.trim();
         if (desc.length > 0)
-            addTask(desc);
+            props.addTask(desc);
         setDescription('');
     }
 
@@ -26,5 +26,3 @@ const Form = ({ addTask }) => {
         </form>
     );
 }
-
-export default Form;

@@ -1,8 +1,8 @@
 import React from "react";
-import Task from "./Task"
-import "./List.css"
+import { Task } from "../Task/index"
+import "./index.css"
 
-const List = ({ list, handleToggle, handleFilter }) => {
+export const List = ({ list, handleToggle, handleFilter }) => {
     return (
         <div>
             {list.map(task => {
@@ -17,7 +17,4 @@ const List = ({ list, handleToggle, handleFilter }) => {
             <button onClick={handleFilter}><strong>Clear Tasks</strong></button>
         </div>
     );
-
 }
-
-export default List;
