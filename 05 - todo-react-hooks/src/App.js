@@ -6,13 +6,13 @@ import { Form } from "./components/Form/index"
 
 import "./App.css"
 
-function App() {
+export const App = () => {
   const [list, setList] = useState([{
     id: 0,
     description: 'No task',
     done: false
   }]);
-  const [count, setCount] = useState(0);
+  let [count, setCount] = useState(0);
 
   const handleToggle = (id) => {
     const listToggle = list.map(task => {
@@ -42,9 +42,8 @@ function App() {
     }
 
     const newList = [...list, { id: count, description: newTask, done: false }]
-    const incCount = count + 1;
     setList(newList);
-    setCount(incCount);
+    setCount(++count);
   }
 
   return (
@@ -61,5 +60,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
