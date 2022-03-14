@@ -78,11 +78,11 @@ describe('should check the buttons', () => {
         userEvent.click(buttonAddTask);
 
         const buttonTask = screen.getByRole("button", { name: "Estudar React" });
-
+        console.log(buttonTask.className)
         expect(buttonTask).toHaveClass("task");
 
         userEvent.click(buttonTask);
-
+        console.log(buttonTask.className)
         expect(buttonTask).toHaveClass("task done");
     })
 

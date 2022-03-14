@@ -2,19 +2,19 @@ import React from "react";
 import { Task } from "../Task/index"
 import "./index.css"
 
-export const List = (props) => {
+export const List = ({ list, handleToggle, handleFilter }) => {
     return (
         <div>
-            {props.list.map(task => {
+            {list.map(task => {
                 return (
                     <Task
                         key={task.id + task.description}
                         task={task}
-                        handleToggle={props.handleToggle}
+                        handleToggle={handleToggle}
                     />
                 );
             })}
-            <button onClick={props.handleFilter}><strong>Clear Tasks</strong></button>
+            <button onClick={handleFilter}><strong>Clear Tasks</strong></button>
         </div>
     );
 }

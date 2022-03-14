@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import "./index.css"
 
-export const Form = (props) => {
+export const Form = ({ addTask }) => {
 
     const [description, setDescription] = useState('');
 
@@ -9,7 +9,7 @@ export const Form = (props) => {
         event.preventDefault();
         const desc = description.trim();
         if (desc.length > 0)
-            props.addTask(desc);
+            addTask(desc);
         setDescription('');
     }
 

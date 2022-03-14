@@ -1,21 +1,21 @@
 import React from "react";
 import './index.css'
 
-export const Task = (props) => {
+export const Task = ({ task, handleToggle }) => {
 
     const handleClick = (event) => {
         event.preventDefault();
-        props.handleToggle(event.target.id);
+        handleToggle(event.target.id);
     }
 
     return (
         <div>
             <button
-                id={props.task.id}
+                id={task.id}
                 onClick={handleClick}
-                className={props.task.done ? "task done" : "task"}
+                className={task.done ? "task done" : "task"}
             >
-                {props.task.description}
+                {task.description}
             </button>
         </div>
     );
